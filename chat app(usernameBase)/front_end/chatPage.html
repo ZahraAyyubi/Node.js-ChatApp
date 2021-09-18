@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="container py-4 px-4">
+
+  <header class="text-center py-3">
+    <h1 class="display-4 text-white">Private Chat App</h1>
+  </header>
+
+  <div class="row rounded-lg overflow-hidden shadow">
+    <!-- Online users box-->
+    <div class="col-5 px-0 bg-white">
+        <div class="bg-gray px-4 py-2 bg-light">
+          <p class="h5 mb-0 py-1">Online users</p>
+        </div>
+
+        <div class="users-box">
+          <div class="list-group rounded-0" id="users-list">
+
+          </div>
+        </div>
+    </div>
+
+    <!-- Chat Box-->
+    <div class="col-7 px-0 bg-white">
+
+      <div class="bg-dark px-4 py-2 sticky-top text-center">
+        <p class="h6 mb-0 py-2 text-light" id="chatInfo" ></p>
+      </div>
+
+      <div class="px-3 py-4 chat-box bg-white"></div>
+
+      <!-- Typing area -->
+      <form id="typing-area" class="bg-light d-none">
+        <div class="input-group">
+          <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light" id="message" autocomplete="off">
+          <div class="input-group-append">
+            <button id="button-addon2" type="submit" class="btn btn-link"> <i class="fa fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
