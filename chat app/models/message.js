@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 
 const messageSchema = new mongoose.Schema({
-    sender:{type: String, ref:'User'},
-    reciever:{type: String, ref:'User'},
+    sender: String,
+    reciever: String,
     body: String,
     date: String,
     time: String
