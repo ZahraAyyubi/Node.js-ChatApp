@@ -19,7 +19,7 @@ $(function() {
                 success: function (username, status, xhr) {
                     //window.localStorage.setItem("username", username);
                     $('#response').css("color", "green").text('login successfully, redirecting to home page...');
-                    setTimeout(()=>{window.location.href = '/chatPage';},1500)
+                    setTimeout(()=>{window.location.href = '/chatPage';},1000)
 
                 },
                 error: function (jqXhr, textStatus, errorMessage) {

@@ -1,4 +1,4 @@
-//middleware for authentication
+//for authentication
 const jwt= require('jsonwebtoken');
 const tokenKey = process.env.TOKEN_KEY;
 
@@ -16,7 +16,7 @@ const verifyToken = (req,res,next)=>{
     const accessToken= req.cookies['access-token'];
 
     if(!accessToken){//user not authenticated
-        return res.status(403).redirect('/login');
+        return res.status(401).redirect('/login');
     }
     try {
         const decoded = jwt.verify(accessToken, tokenKey);
@@ -24,8 +24,8 @@ const verifyToken = (req,res,next)=>{
 
 
     } catch (err) {
-        console.log(accessToken)
-        return res.status(401).send("Invalid Token");
+        console.log(err)
+        return res.status(401).redirect('/login');//invalid token
     }
     return next();
 };
